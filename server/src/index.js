@@ -11,10 +11,10 @@ const port = process.env.PORT || 4000;
 
 // CORS configuration to allow requests from any origin
 app.use(cors({
-    origin: "*", // Allow all origins
-    methods: ['GET', 'POST'], // Allow these methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
-    credentials: true // Allow credentials (e.g., cookies, authorization headers)
+        origin: process.env.FRONTEND_URI, // Use your frontend URL here
+        methods: ['GET', 'POST', 'OPTIONS'], // Make sure OPTIONS is included
+        allowedHeaders: ['Content-Type', 'Authorization'],
+        credentials: true // If you're sending credentials
 }));
 
 app.use(express.json());
