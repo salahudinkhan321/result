@@ -9,10 +9,9 @@ dotenv.config({ path: './.env' })
 const app = express()
 const port = process.env.PORT || 4000
 
-console.log('Allowed CORS Origin:', process.env.FRONTEND_URI);
 
 app.use(cors({
-    origin: process.env.FRONTEND_URI,
+    origin: "*",
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
